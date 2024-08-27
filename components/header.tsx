@@ -3,6 +3,7 @@ import Navigation from "./navigation";
 import { ClerkLoaded, ClerkLoading, UserButton } from "@clerk/nextjs";
 import { Skeleton } from "@/components/ui/skeleton";
 import WelcomeMsg from "@/components/welcome-msg";
+import { Filters } from "./filters";
 
 const Header = () => {
   return (
@@ -14,13 +15,14 @@ const Header = () => {
             <Navigation />
           </div>
           <ClerkLoaded>
-            <UserButton afterSignOutUrl="/" />
+            <UserButton />
           </ClerkLoaded>
           <ClerkLoading>
             <Skeleton className="w-7 h-7 rounded-full bg-white/5" />
           </ClerkLoading>
         </div>
         <WelcomeMsg />
+        <Filters />
       </div>
     </header>
   );
